@@ -2,6 +2,8 @@ $(document).ready(Core);
 
 function Core()
 {
+    InitOwl();
+
     SetTabSwitcher();
     SetModal();
 }
@@ -95,4 +97,12 @@ function HideModal(modalId)
         $(modalId + ' .modal__dialog').removeClass('fadeOutDownBig');
         $('.modal__backdrop').remove();
     });
+}
+
+function InitOwl()
+{
+    $('section.banner__slider .owl-carousel').owlCarousel({
+        items: 1,
+        dotsContainer: $('section.banner__slider .owl-dots')
+    })
 }

@@ -16,3 +16,77 @@ mixin InputRadio(name, label)
 mixin BtnMenu()
     button.btn__menu
         span
+
+mixin Infobar()
+    header
+        .infobar
+            .container
+                .wrapper
+                    .form__city(value="Москва")
+                        span.text Ваш город:
+                        span.city Москва
+                        .select
+                            span Истра
+                            span Нфыварколыв
+                            span Москва
+                    span.address Походный проезд, д.4, корп. 1, офис 317 А, 3-й этаж
+                .wrapper
+                    .schedule
+                        span Пн-Пт 9:00-18:00
+                    button.btn.red Задать вопрос
+
+mixin Navbar()
+    .navbar
+        .container
+            a.logo
+                img(src="assets/images/logo.png", alt="")
+            .wrapper
+                .contacts__wrapper
+                    .contact.phone
+                        a(href="tel:8 (495) 698-60-99") 8 (495) 698-60-99
+                        a(href="tel:8 (800) 505-01-97") 8 (800) 505-01-97
+                    .contact.email
+                        a(href="mailto:zakaz@alfa-ms.ru") zakaz@alfa-ms.ru
+                button.btn.red Заказать звонок
+                .cart
+                    .icon
+                        img(src="assets/images/icons/cart.png", alt="")
+                        span.total__count 0
+                    .wrapper
+                        span.total__cost 0 р.
+                        a.goto__cart(href="") Оформить заказ 
+        .container
+            .menu
+                .catalog__wrapper 
+                    a(href="")  Каталог мебели
+                    .catalog
+                        a(href="") Мебель для персонала
+                        a(href="") Кабинеты руководителя
+                        a(href="") Офисные кресла
+                        a(href="") Офисные диваны
+                        a(href="") Модульная мягкая мебель  
+                        a(href="") Стойки ресепшн
+                        a(href="") Столы переговоров
+                        a(href="") Офисные перегородки
+                        a(href="") Многоместные секции
+                        a(href="") Металлическая мебель
+                        a(href="") Сейфы
+                        a(href="") Гостиничная мебель
+                        a(href="") Кухни для офиса
+                        a(href="") Аксессуары для офиса
+                        a(href="") Мебель для кафе и ресторанов
+                        a(href="") Мебель для школ и детских садов
+                        a(href="") Геймерские столы
+                        a(href="") Офисная мебель для дома          
+                a(href="") О компании
+                a(href="") Наши проекты 
+                a(href="") Дизайнерам
+                a(href="") Новости
+                a(href="") Отзывы
+                a(href="") Контакты
+            .search__form
+                form(action="/" method="get")
+                    .search__input
+                        input(type="text" placeholder="Я хочу найти..." name="query" value="")
+                        button 
+

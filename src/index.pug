@@ -9,11 +9,27 @@ html(lang="ru")
         title Document
         include pug/head.pug
     body
-        .container
-            h1 Hi from PUG! 
-            +InputRadio('name', 'test')
-            
-            +Modal('test', 'ModalTemplate')
-            button(modal="test") Modal Test
+        +Infobar()
+        section.banner__slider
+            +Navbar()
+            .owl-carousel
+                .slider__item
+                    img(src="assets/images/banner_slider/1.jpg", alt="").bg
+                    .container
+                        .text__wrapper
+                            span.text__black Мебель для персонала
+                            span.text__red от эконом до премиум класса
+                                .clipped
+                .slider__item
+                    img(src="assets/images/banner_slider/1.jpg", alt="").bg
+                    .container
+                        .text__wrapper
+                            span.text__black Мебель для персонала
+                            span.text__red от эконом до премиум класса
+                                .clipped
+            .owl-dots
 
         include pug/scripts.pug
+        <svg class="svg">
+            <clipPath id="my-clip-path" clipPathUnits="objectBoundingBox"><path d="M1,0.5 L0,1 L0,0 L1,0.5"></path></clipPath>
+        </svg>
