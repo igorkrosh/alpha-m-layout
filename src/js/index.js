@@ -6,6 +6,7 @@ function Core()
 
     SetTabSwitcher();
     SetModal();
+    SetMoreRecomended();
 }
 
 function SetTabSwitcher()
@@ -105,4 +106,13 @@ function InitOwl()
         items: 1,
         dotsContainer: $('section.banner__slider .owl-dots')
     })
+}
+
+function SetMoreRecomended()
+{
+    $('section.recomended .btn__wrapper .btn').on('click', function() {
+        let height = $('section.recomended .more__block .recomended__wrapper').height();
+        $('section.recomended .more__block').height(height);
+        $('section.recomended .btn__wrapper').fadeOut();
+    });
 }

@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     color: #000;
-    background: #fff;
+    background: #f2f3f5;
     font-family: "OpenSans";
 }
 
@@ -166,6 +166,19 @@ button, a
 {
     color: #fff;
     background: #e21e24;
+}
+
+.btn.grey
+{
+    background: #e5e5e5;
+    color: black;
+}
+
+.btn.large
+{
+    font-size: 16px;
+    padding: 10px 25px;
+    text-transform: initial;
 }
 
 section.banner__slider
@@ -524,7 +537,7 @@ section.banner__slider
     font-weight: 700;
     border-left: 2px solid #e21e24;
     padding-left: 15px;
-    margin: 35px 0;
+    margin: 0 0 35px 0;
 }
 
 section.our__catalog
@@ -634,6 +647,82 @@ section.our__pluses
         {
             border: none;
         }
+    }
+}
+
+section.recomended
+{
+    .recomended__wrapper
+    {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: 32% 32% 32%;
+        grid-gap: auto;
+        justify-content: space-between;
+        margin-bottom: 25px;
+
+        .recomended__item
+        {
+            img
+            {
+                width: 100%;
+            }
+
+            .desc
+            {
+                padding: 25px;
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .name
+                {
+                    font-size: 14px;
+                    font-weight: 700;
+                    margin-bottom: 15px;
+                }
+
+                .price__wrapper
+                {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    .old__price
+                    {
+                        font-size: 14px;
+                        text-decoration: line-through;
+                        margin-right: 5px;
+                    }
+
+                    .new__price
+                    {
+                        font-size: 21px;
+                        color: #d40406;
+                        font-weight: 700;
+                    }
+                }
+
+                .btn.red
+                {
+                    width: 70%;
+                    height: 40px;
+                }
+            }
+        }
+    }
+    
+    .more__block
+    {
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+
+    .btn__wrapper
+    {
+        text-align: center;
+        margin: 25px 0;
     }
 }
 
