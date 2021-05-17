@@ -171,6 +171,7 @@ button, a
 section.banner__slider
 {
     position: relative;
+    padding: 0;
     .slider__item
     {
         min-height: 640px;
@@ -515,6 +516,78 @@ section.banner__slider
         bottom: 0;
         margin: auto;
     }
+}
+
+.title
+{
+    font-size: 25px;
+    font-weight: 700;
+    border-left: 2px solid #e21e24;
+    padding-left: 15px;
+    margin: 35px 0;
+}
+
+section.our__catalog
+{
+    .our__catalog__wrapper
+    {
+        display: grid;
+        grid-auto-rows: 160px;
+        grid-template-columns: 280px 280px 280px 280px;
+        grid-gap: 15px;
+        .our__catalog__item
+        {
+            display: flex;
+            position: relative;
+            align-items: flex-end;
+            padding: 15px;
+            overflow: hidden;
+            .bg
+            {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -2;
+                transition: 0.3s;
+            }
+
+            span
+            {
+                color: #fff;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        }
+
+        .our__catalog__item:after
+        {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .our__catalog__item:hover
+        {
+            .bg
+            {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+section
+{
+    padding: 30px 0;
 }
 
 @import 'responce';

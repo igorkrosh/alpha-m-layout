@@ -1,5 +1,11 @@
 include pug/mixins.pug
 
+mixin OurCatalogItem(img, title)
+    -let bg = "assets/images/catalog/" + img
+    a(href="").our__catalog__item
+        img(src= bg, alt="").bg
+        span=title
+
 doctype html
 html(lang="ru")
     head
@@ -28,6 +34,24 @@ html(lang="ru")
                             span.text__red от эконом до премиум класса
                                 .clipped
             .owl-dots
+        section.our__catalog
+            .container
+                h2.title Наш каталог
+                .our__catalog__wrapper
+                    +OurCatalogItem('1.jpg', 'Мебель для персонала')
+                    +OurCatalogItem('1.jpg', 'Кабинеты руководителя')
+                    +OurCatalogItem('1.jpg', 'Офисные кресла')
+                    +OurCatalogItem('1.jpg', 'Офисные диваны')
+                    +OurCatalogItem('1.jpg', 'Модульная мягкая мебель')
+                    +OurCatalogItem('1.jpg', 'Стойки ресепшн')
+                    +OurCatalogItem('1.jpg', 'Столы переговоров')
+                    +OurCatalogItem('1.jpg', 'Офисные перегородки')
+                    +OurCatalogItem('1.jpg', 'Многоместные секции')
+                    +OurCatalogItem('1.jpg', 'Металлическая мебель')
+                    +OurCatalogItem('1.jpg', 'Сейфы')
+                    +OurCatalogItem('1.jpg', 'Гостинная мебель')
+                    
+
 
         include pug/scripts.pug
         <svg class="svg">
