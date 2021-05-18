@@ -804,4 +804,65 @@ section.our__partners
     }
 }
 
+section.about__us
+{
+    .container
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .col__video, .col__text
+        {
+            width: 48%;
+        }
+
+        .col__video
+        {
+            position: relative;
+            display: flex;
+        }
+        
+        .col__video:after
+        {
+            content: '';
+            width: 88px;
+            height: 62px;
+            background: url(../images/icons/youtube.png);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.3s;
+        }
+
+        .col__video:hover::after
+        {
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .col__text
+        {
+            background: #fff;
+            padding: 25px;
+
+            h2
+            {
+                font-size: 18px;
+            }
+
+            p 
+            {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+.red__link
+{
+    font-size: 15px;
+    color: #d40406;
+}
+
 @import 'responce';

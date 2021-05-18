@@ -3,6 +3,7 @@ $(document).ready(Core);
 function Core()
 {
     InitOwl();
+    InitSimpleLightbox();
 
     SetTabSwitcher();
     SetModal();
@@ -120,4 +121,9 @@ function SetMoreRecomended()
         $('section.recomended .more__block').height(height);
         $('section.recomended .btn__wrapper').fadeOut();
     });
+}
+
+function InitSimpleLightbox()
+{
+    $('section.about__us .col__video').simpleLightbox();
 }
