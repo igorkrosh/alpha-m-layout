@@ -112,6 +112,11 @@ function InitOwl()
         items: 4,
         navContainer: $('section.our__partners .owl-nav')
     })
+
+    $('section.info__section .owl-carousel').owlCarousel({
+        items: 1,
+        navContainer: $('section.info__section .title__wrapper .owl-nav'),
+    })
 }
 
 function SetMoreRecomended()
