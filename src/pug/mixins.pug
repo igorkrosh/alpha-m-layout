@@ -90,3 +90,97 @@ mixin Navbar()
                         input(type="text" placeholder="Я хочу найти..." name="query" value="")
                         button 
 
+mixin QuestionForm()
+    form(action="").question__form
+        h2 Появились вопросы?
+        p Вы можете задать интересующий Вас вопрос в этой форме, просто заполните необходимые поля и наш менеджер свяжется с Вами в ближайщее время
+        .wrapper
+            input(type="text" name="name" placeholder="Как вас зовут?")
+            input(type="text" name="phone" placeholder="Ваш номер телефона?")
+        button.btn.red Задать вопрос
+        span.policy Нажимая на кнопку, я соглашаюсь с политикой конфиденциальности
+
+mixin Footer()
+    footer
+        .container.first__line
+            .col 
+                span.footer__title Информация
+                .menu__wrapper
+                    a(href="") О компании
+                    a(href="") Наши предметы
+                    a(href="") Дизайнерам
+                    a(href="") Новости
+                    a(href="") Отзывы
+                    a(href="") Контакты
+            .col 
+                .catalog__menu
+                    a(href="") Кабинеты руководителя
+                    a(href="") Мебель для персонала
+                    a(href="") Модульная мягкая мебель
+                    a(href="") Офисные диваны
+                    a(href="") Офисные кресла
+                    a(href="") Стойки ресепшн
+            .col
+                .catalog__menu
+                    a(href="") Столы переговоров 
+                    a(href="") Офисные перегородки
+                    a(href="") Многоместные секции
+                    a(href="") Металлическая мебель
+                    a(href="") Сейфы
+                    a(href="") Гостиничная мебель
+            .col
+                .catalog__menu
+                    a(href="") Кухни для офиса
+                    a(href="") Аксессуары для офиса
+                    a(href="") Мебель для кафе и ресторанов
+            .col
+                span.footer__title Популярные модели
+                .catalog__menu
+                    a(href="") Imago офисная мебель
+                    a(href="") Мебель для персонала Арго
+                    a(href="") Мебель для персонала RIVA   
+        .container.second__line
+            .col__contacts
+                span.footer__title Контакты
+                .contacts__wrapper
+                    .contact.address Походный проезд, д.4, корп. 1, офис 317 А, 3-й этаж
+                    .contact.phone 
+                        a(href="") +7 (495) 698-60-99 
+                        a(href="") 8 (800) 505-01-97 
+                .btns__wrapper
+                    button.btn.red Заказать звонок
+                    button.btn.red Задать вопрос
+            .col__schedule
+                span.footer__title Время работы:
+                .schedule
+                    span Пн-Пт 9:00-18:00
+            .col__soc
+                span.footer__title Мы в соц. сетях:
+                .soc__wrapper
+                    a(href="").soc
+                        img(src="assets/images/icons/vk.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/fb.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/tw.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/pn.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/ok.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/in.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/yt.png", alt="")
+                    a(href="").soc
+                        img(src="assets/images/icons/gl.png", alt="")
+        .container.last__line
+            span.copyright © 2009-2021 ООО "Офисная мебель АЛЬФА-М" офисная мебель Москва
+            span.info *Цены и сведения указанные в интернет-магазине «Офисная мебель АЛЬФА-М» в городе Москва не являются публичной офертой и носят исключительно информационный характер (ст. 437 Гражданского кодекса РФ). Уточнить указанные данные можно по электронной почте или контактному номеру.
+            .wrapper
+                a(href="").policy Политика конфиденциальности
+                .salut
+                    span 
+                        |Разработка сайта - 
+                        a(href="https://salut-promo.ru/") Salut Promo 
+
+

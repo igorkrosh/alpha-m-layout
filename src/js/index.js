@@ -4,6 +4,7 @@ function Core()
 {
     InitOwl();
     InitSimpleLightbox();
+    InitValidator();
 
     SetTabSwitcher();
     SetModal();
@@ -131,4 +132,33 @@ function SetMoreRecomended()
 function InitSimpleLightbox()
 {
     $('section.about__us .col__video').simpleLightbox();
+}
+
+function InitValidator()
+{
+    $.validator.addMethod('checkPhone', function(value, element) {
+        return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value); 
+    })
+
+    let validateSetting = {
+        rules: {
+            phone: {
+                checkPhone: true
+            }
+        },
+        messages: {
+            phone: {
+                checkPhone: "Введите полный номер телефона"
+            }
+        },
+        submitHandler: SubmitForm
+    }
+
+    $('section.ask_us form.question__form').validate(validateSetting);
+    $('form input[name=phone]').mask("+7(999)999-9999", {autoclear: false});
+}
+
+function SubmitForm()
+{
+    console.log('valid');
 }
