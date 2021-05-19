@@ -118,6 +118,78 @@ function InitOwl()
         items: 1,
         navContainer: $('section.info__section .title__wrapper .owl-nav'),
     })
+
+    let productPreviewSlider = $('section.catalog__info .images__wrapper');
+    let productImagesSlider = $('section.catalog__info .images__slider');
+    let syncedSecondary = true;
+
+    productPreviewSlider.owlCarousel({
+        items: 1,
+        nav: false,
+        dots: false,
+
+    }).on('changed.owl.carousel', syncPosition);
+
+    productImagesSlider.on('initialized.owl.carousel', function() {
+        productImagesSlider.find(".owl-item").eq(0).addClass("current");
+    }).owlCarousel({
+        items: 4,
+        nav: false,
+        dots: false,
+        responsive: {
+            1042: {
+                items: 4
+            },
+            992: {
+                items: 3
+            },
+            0: {
+                items: 3
+            }
+        }
+    }).on('changed.owl.carousel', syncPosition2);
+
+    function syncPosition(el) {
+        var count = el.item.count - 1;
+        //var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+        let current = el.item.index;
+        console.log(current);
+        if (current < 0) {
+            current = count;
+        }
+        if (current > count) {
+            current = 0;
+        }
+
+        productImagesSlider
+            .find(".owl-item")
+            .removeClass("current")
+            .eq(current)
+            .addClass("current");
+        var onscreen = productImagesSlider.find('.owl-item.active').length - 1;
+        var start = productImagesSlider.find('.owl-item.active').first().index();
+        var end = productImagesSlider.find('.owl-item.active').last().index();
+
+        if (current > end) {
+            productImagesSlider.data('owl.carousel').to(current, 100, true);
+        }
+        if (current < start) {
+            productImagesSlider.data('owl.carousel').to(current - onscreen, 100, true);
+        }
+    }
+
+    function syncPosition2(el) {
+        if (syncedSecondary) {
+            var number = el.item.index;
+            productPreviewSlider.data('owl.carousel').to(number, 100, true);
+        }
+    }
+
+    productImagesSlider.on("click", ".owl-item", function(e) {
+        e.preventDefault();
+        var number = $(this).index();
+        productPreviewSlider.data('owl.carousel').to(number, 300, true);
+    });
 }
 
 function SetMoreRecomended()
@@ -132,6 +204,7 @@ function SetMoreRecomended()
 function InitSimpleLightbox()
 {
     $('section.about__us .col__video').simpleLightbox();
+    $('section.catalog__info .images__wrapper a').simpleLightbox();
 }
 
 function InitValidator()

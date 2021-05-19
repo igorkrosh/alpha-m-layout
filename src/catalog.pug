@@ -1,0 +1,134 @@
+include pug/mixins.pug
+
+mixin Char(key, value)
+    .char
+        span.key=key
+        span.value=value
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include pug/head.pug
+    body 
+        +Infobar()
+        +Navbar()
+        section.catalog__info
+            .container
+                ul.breadscrumbs
+                    li 
+                        a(href="") Офисная мебель
+                    span -
+                    li
+                        a(href="") Каталог мебели
+                    span -
+                    li 
+                        a(href="") Мебель для персонала
+                    span -
+                    li 
+                        |SWIFT
+                h1.title МЕБЕЛЬ ДЛЯ ПЕРСОНАЛА SWIFT
+                .product__info
+                    .images__col
+                        .images__wrapper.owl-carousel
+                            a(href="assets/images/catalog/product/1.jpg").preview
+                                img(src="assets/images/catalog/product/1.jpg", alt="")
+                            a(href="assets/images/catalog/product/2.jpg").preview
+                                img(src="assets/images/catalog/product/2.jpg", alt="")
+                            a(href="assets/images/catalog/product/3.jpg").preview
+                                img(src="assets/images/catalog/product/3.jpg", alt="")
+                            a(href="assets/images/catalog/product/4.jpg").preview
+                                img(src="assets/images/catalog/product/4.jpg", alt="")
+                        .images__slider.owl-carousel
+                            .slide
+                                img(src="assets/images/catalog/product/1.jpg", alt="")
+                            .slide
+                                img(src="assets/images/catalog/product/2.jpg", alt="")
+                            .slide
+                                img(src="assets/images/catalog/product/3.jpg", alt="")
+                            .slide
+                                img(src="assets/images/catalog/product/4.jpg", alt="")
+                        .tags
+                            span.hit Хит продаж
+                            span.popular Популярный
+                    .desc__col
+                        .price__row
+                            .price__wrapper 
+                                b Цена от: 
+                                span.old__price 6000 р.
+                                span.new__price 5000 р.
+                            .rating
+                                b Оценить продукт: 
+                                .star.active
+                                .star.active
+                                .star.active
+                                .star.active
+                                .star
+                            a(href="").price__list Скачать прайс-лист
+                        .materials
+                            b Варианты материалов: 
+                            +InputRadio('material', 'ЛДСП', 'ЛДСП')
+                            +InputRadio('material', 'ПВХ', 'ПВХ')
+                        .colors
+                            b Варианты расцветки, материал:
+                            label.radio
+                                input(type="radio" name="color" value="1")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 
+                            label.radio
+                                input(type="radio" name="color" value="2")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 2
+                            label.radio
+                                input(type="radio" name="color" value="3")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 3
+                            label.radio
+                                input(type="radio" name="color" value="4")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 4
+                        .chars__wrapper
+                            .col    
+                                +Char('Страна-производитель: ', 'Россия')
+                                +Char('Срок поставки: ', 'Складская программа')
+                                +Char('Класс: ', 'Бизнес')
+                                +Char('Код товара: ', '24001-000')
+                                +Char('Артикул', 'Swift')
+                            .col
+                                +Char('Гарантия: ', '18 месяцев')
+                                +Char('Срок производства:  ', '1-5 рабочих дней')
+                                +Char('Материал столешницы: ', 'лдсп')
+                                +Char('олщина столешницы, мм: ', '25')
+                        .pluses__wrapper
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus1.png", alt="")
+                                .text
+                                    b Минимальные цены
+                                    span Базовый принцип нашей компании
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus2.png", alt="")
+                                .text
+                                    b Высочайший сервис
+                                    span Личный менеджер, дизайн, доставка, сборка
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus3.png", alt="")
+                                .text
+                                    b Любые способы доставки
+                                    span Безнал (с НДС и без), любые карты, наличные
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus4.png", alt="")
+                                .text
+                                    b Телефон
+                                    span +7 (495) 698-60-99
+        include pug/scripts.pug

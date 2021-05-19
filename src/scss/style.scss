@@ -1349,4 +1349,352 @@ footer
     }
 }
 
+.breadscrumbs
+{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+    li
+    {
+        font-size: 12px;
+        padding: 0 7px;
+
+        a
+        {
+            text-decoration: underline;
+        }
+    }
+
+    li:first-of-type
+    {
+        padding-left: 0;
+    }
+}
+
+section.catalog__info
+{
+    .title
+    {
+        border: none;
+        padding-left: 0;
+        margin: 25px 0;
+    }
+
+    .product__info
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        b 
+        {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .images__col
+        {
+            width: 41%;
+            position: relative;
+        }
+
+        .images__wrapper 
+        {
+            margin-bottom: 10px;
+        }
+
+        .images__slider
+        {
+            .slide
+            {
+                padding: 5px;
+            }
+
+            .owl-item
+            {
+                img 
+                {
+                    border: 3px solid #f2f3f5;
+                    transition: 0.3s;
+                }
+            }
+
+            .owl-item.current
+            {
+                img
+                {
+                    border: 3px solid #d40406;
+                }
+            }
+        }
+
+        .desc__col
+        {
+            width: 57%;
+            display: flex;
+            flex-direction: column;
+            
+            
+            .price__row
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+
+                .price__wrapper
+                {
+                    display: flex;
+                    align-items: center;
+
+                    b
+                    {
+                        margin-right: 10px;
+                    }
+                    
+                    .old__price
+                    {
+                        font-size: 14px;
+                        text-decoration: line-through;
+                        margin-right: 10px;
+                        font-weight: 700;
+                    }
+
+                    .new__price
+                    {
+                        font-size: 25px;
+                        color: #d40406;
+                        font-weight: 700;
+                    }
+                }
+
+                .rating
+                {
+                    display: flex;
+                    align-items: center;
+
+                    .star
+                    {
+                        width: 11px;
+                        height: 11px;
+                        background: url(../images/icons/star.png);
+                        margin: 2px;
+                        transition: 0.5s;
+                        cursor: pointer;
+                    }
+
+                    .star:not(.active)
+                    {
+                        filter: grayscale(100%);
+                    }
+
+                    .star:hover
+                    {
+                        filter: grayscale(0%);
+                    }
+                }
+
+                .price__list
+                {
+                    font-size: 13px;
+                    text-decoration: underline;
+                    padding-left: 30px;
+                    position: relative;
+                    display: block;
+                }
+
+                .price__list:after
+                {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background: url(../images/icons/pdf.png);
+                    width: 20px;
+                    height: 24px;
+                }
+            }
+
+            .materials
+            {
+                display: flex;
+                align-items: center;
+                margin-bottom: 25px;
+                label
+                {
+                    padding: 5px 10px;
+                    background: #e8e8e8;
+                    display: flex;
+                    font-size: 12px;
+                    color: #000;
+                }
+
+                .checkmark
+                {
+                    top: 0;
+                    left: 0;
+                    transform: none;
+                    width: 100%;
+                    height: 100%;
+                    background: none;
+                    border-radius: 0;
+                }
+
+                .checkmark:after
+                {
+                    content: none;
+                }
+
+                .radio input:checked~.checkmark
+                {
+                    border: 1px solid #000;
+                }
+            }
+
+            .colors
+            {
+                display: flex;
+                align-items: center;
+                margin-bottom: 25px;
+
+                .radio input:checked~.color
+                {
+                    opacity: 1;
+                }
+
+                .radio
+                {
+                    position: relative;
+                    padding-left: 0;
+                    margin: 5px;
+                }
+
+                .icon
+                {
+                    display: flex;
+                }
+
+                .color
+                {
+                    font-size: 10px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    top: 100%;
+                    width: 100px;
+                    text-align: center;
+                    opacity: 0;
+                }
+
+                .radio input:checked~.icon
+                {
+                    border: 2px solid #d40406;                    
+                }
+            }
+
+            .chars__wrapper
+            {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 25px;
+
+                .col
+                {
+                    width: 48%;
+                    
+                    .char
+                    {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        font-size: 13px;
+                        align-items: center;
+                        margin-bottom: 10px;
+
+                        .key
+                        {
+                            width: 48%
+                        }
+
+                        .value
+                        {
+                            width: 48%;
+                            color:#d40406;
+                        }
+                    }
+                }
+            }
+
+            .pluses__wrapper
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                background: #fff;
+                padding: 15px;
+
+                .plus
+                {
+                    max-width: 160px;
+                }
+
+                .icon
+                {
+                    height: 50px;
+                }
+
+                .text
+                {
+                    font-size: 12px;
+                    display: flex;
+                    flex-direction: column;
+
+                    b
+                    {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tags
+{
+    position: absolute;
+    left: 0;
+    top: 15px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    span
+    {
+        display: block;
+        width: 80px;
+        text-align: center;
+        padding: 5px;
+        font-size: 10px;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+
+    .hit
+    {
+        background: #2a333e;   
+    }
+
+    .popular
+    {
+        background: #0dae45;
+    }
+}
+
 @import 'responce';
