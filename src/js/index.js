@@ -27,6 +27,12 @@ function SetTabSwitcher()
 
         SwitchTab(targetTab)
     })
+
+    let activeTabArray = $('.tab.active');
+    activeTabArray.each(function (index) {
+        console.log()
+        $(activeTabArray[index]).parent('.tab__viewer').css('height', $(activeTabArray[index]).outerHeight());
+    })
 }
 
 function SwitchTab(target)
@@ -195,7 +201,7 @@ function InitOwl()
 function SetMoreRecomended()
 {
     $('section.recomended .btn__wrapper .btn').on('click', function() {
-        let height = $('section.recomended .more__block .recomended__wrapper').height();
+        let height = $('section.recomended .more__block .products__wrapper').height();
         $('section.recomended .more__block').height(height);
         $('section.recomended .btn__wrapper').fadeOut();
     });
