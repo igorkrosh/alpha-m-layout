@@ -196,6 +196,12 @@ function InitOwl()
         var number = $(this).index();
         productPreviewSlider.data('owl.carousel').to(number, 300, true);
     });
+
+    $('section.catalog__slider .owl-carousel').owlCarousel({
+        items: 3,
+        nav: true,
+        navContainer: $('section.catalog__slider .owl-nav')
+    })
 }
 
 function SetMoreRecomended()

@@ -1,0 +1,304 @@
+include pug/mixins.pug
+
+mixin Char(key, value)
+    .char
+        span.key=key
+        span.value=value
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        include pug/head.pug
+    body 
+        +Infobar()
+        +Navbar()
+        section.catalog__info.product__view
+            .container
+                ul.breadscrumbs
+                    li 
+                        a(href="") Офисная мебель
+                    span -
+                    li
+                        a(href="") Каталог мебели
+                    span -
+                    li 
+                        a(href="") Мебель для персонала
+                    span -
+                    li 
+                        a(href="") SWIFT
+                    span - 
+                    li
+                        span Стол пильменный
+                h1.title Стол пильменный
+                .product__info
+                    .images__col
+                        .images__wrapper.owl-carousel
+                            a(href="assets/images/catalog/product/1.jpg").preview
+                                img(src="assets/images/catalog/product/1.jpg", alt="")
+                            a(href="assets/images/catalog/product/2.jpg").preview
+                                img(src="assets/images/catalog/product/2.jpg", alt="")
+                            a(href="assets/images/catalog/product/3.jpg").preview
+                                img(src="assets/images/catalog/product/3.jpg", alt="")
+                            a(href="assets/images/catalog/product/4.jpg").preview
+                                img(src="assets/images/catalog/product/4.jpg", alt="")
+                        .images__slider.owl-carousel
+                            .slide
+                                img(src="assets/images/catalog/product/1.jpg", alt="")
+                            .slide
+                                img(src="assets/images/catalog/product/2.jpg", alt="")
+                            .slide
+                                img(src="assets/images/catalog/product/3.jpg", alt="")
+                            .slide
+                                img(src="assets/images/catalog/product/4.jpg", alt="")
+                        .tags
+                            span.hit Хит продаж
+                            span.popular Популярный
+                    .desc__col
+                        .price__row
+                            .price__wrapper 
+                                b Цена от: 
+                                span.old__price 6000 р.
+                                span.new__price 5000 р.
+                            .rating
+                                b Оценить продукт: 
+                                .star.active
+                                .star.active
+                                .star.active
+                                .star.active
+                                .star
+                            .buy__wrapper
+                                button.btn.red.add__cart 
+                                    span Добавить в корзину
+                                button.btn.border__red Купить в 1 клик
+                        .materials
+                            b Варианты материалов: 
+                            +InputRadio('material', 'ЛДСП', 'ЛДСП')
+                            +InputRadio('material', 'ПВХ', 'ПВХ')
+                        .colors
+                            b Варианты расцветки, материал:
+                            label.radio
+                                input(type="radio" name="color" value="1")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 
+                            label.radio
+                                input(type="radio" name="color" value="2")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 2
+                            label.radio
+                                input(type="radio" name="color" value="3")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 3
+                            label.radio
+                                input(type="radio" name="color" value="4")
+                                .icon
+                                    img(src="assets/images/icons/materials/1.png", alt="")
+                                span.color дуб светло- серый 4
+                            a(href="").price__list Скачать прайс-лист
+                        .chars__wrapper
+                            .col    
+                                +Char('Страна-производитель: ', 'Россия')
+                                +Char('Срок поставки: ', 'Складская программа')
+                                +Char('Класс: ', 'Бизнес')
+                                +Char('Код товара: ', '24001-000')
+                                +Char('Артикул', 'Swift')
+                            .col
+                                +Char('Гарантия: ', '18 месяцев')
+                                +Char('Срок производства:  ', '1-5 рабочих дней')
+                                +Char('Материал столешницы: ', 'лдсп')
+                                +Char('олщина столешницы, мм: ', '25')
+                        .pluses__wrapper
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus1.png", alt="")
+                                .text
+                                    b Минимальные цены
+                                    span Базовый принцип нашей компании
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus2.png", alt="")
+                                .text
+                                    b Высочайший сервис
+                                    span Личный менеджер, дизайн, доставка, сборка
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus3.png", alt="")
+                                .text
+                                    b Любые способы доставки
+                                    span Безнал (с НДС и без), любые карты, наличные
+                            .plus
+                                .icon
+                                    img(src="assets/images/icons/plus4.png", alt="")
+                                .text
+                                    b Телефон
+                                    span +7 (495) 698-60-99
+                .tabs__wrapper
+                    .btn__wrapper
+                        button.btn__tab__switch.active(target="desc")
+                            span Описание
+                        button.btn__tab__switch(target="chars")
+                            span Характеристики
+                        button.btn__tab__switch(target="delivery")
+                            span Доставка
+                    .tab__viewer
+                        .tab.active(tab-name="desc")
+                            p Интернет-магазин «Офисная мебель АЛЬФА-М» представляет вашему вниманию Swift - Мебель для персонала Swift от производителя. Это стильный вариант мебели, который удачно впишется в интерьер любого помещения. Купить Мебель для персонала Swift - 24001-000 недорого по выгодной цене на сайте нашего магазина, можно не выходя из дома. Мы давно работаем в этой индустрии, поэтому нашими клиентами становятся, как рядовые покупатели, так и крупные компании.
+                            p Стоимость Мебель для персонала Swift и быстрая доставка от нашего магазина поразит даже самых привередливых покупателей. Доставка осуществляется по Москве и Московской области автотранспортом компании ООО "Офисная мебель АЛЬФА-М", а также по всем регионам России. В нашем интернет-магазине вы найдете Мебель для персонала Swift в наличии - Swift. Вы самостоятельно сможете быстро оформить заказ Мебель для персонала Swift - 24001-000 и это не займет у вас большого количества времени.
+                            p С нашей компании вы получите качественную мебель в самые короткие сроки.
+                            p Звоните нам по телефону +7 (495) 698-60-99 или посетите наш офис, который располагается по адресу: г. Москва, Походный проезд, д. 4, корп. 1, офис 317 А, 3-й этаж
+                        
+                        .tab(tab-name="chars")
+                            span Характеристики
+                        .tab(tab-name="delivery")
+                            span Доставка
+        section.catalog__slider
+            .container
+                h1.title Недавно просмотренные товары
+                .slider__wrapper
+                    .owl-carousel
+                        .product__item
+                            img(src="assets/images/catalog/1.jpg", alt="")
+                            .desc
+                                span.name Мебель для персонала XTEN
+                                span.size Размер 1200х800
+                                .materials
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                .price__wrapper
+                                    span.old__price от 1234
+                                    span.new__price 1234 руб 
+                                button.btn.red В корзину
+                                button.btn.border__red Купить в 1 клик
+                            .tags
+                                span.hit Хит продаж
+                                span.popular Популярный
+                        .product__item
+                            img(src="assets/images/catalog/1.jpg", alt="")
+                            .desc
+                                span.name Мебель для персонала XTEN
+                                span.size Размер 1200х800
+                                .materials
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                .price__wrapper
+                                    span.old__price от 1234
+                                    span.new__price 1234 руб 
+                                button.btn.red В корзину
+                                button.btn.border__red Купить в 1 клик
+                            .tags
+                                span.hit Хит продаж
+                                span.popular Популярный
+                        .product__item
+                            img(src="assets/images/catalog/1.jpg", alt="")
+                            .desc
+                                span.name Мебель для персонала XTEN
+                                span.size Размер 1200х800
+                                .materials
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                .price__wrapper
+                                    span.old__price от 1234
+                                    span.new__price 1234 руб 
+                                button.btn.red В корзину
+                                button.btn.border__red Купить в 1 клик
+                            .tags
+                                span.hit Хит продаж
+                                span.popular Популярный
+                        .product__item
+                            img(src="assets/images/catalog/1.jpg", alt="")
+                            .desc
+                                span.name Мебель для персонала XTEN
+                                span.size Размер 1200х800
+                                .materials
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                .price__wrapper
+                                    span.old__price от 1234
+                                    span.new__price 1234 руб 
+                                button.btn.red В корзину
+                                button.btn.border__red Купить в 1 клик
+                            .tags
+                                span.hit Хит продаж
+                                span.popular Популярный
+                        .product__item
+                            img(src="assets/images/catalog/1.jpg", alt="")
+                            .desc
+                                span.name Мебель для персонала XTEN
+                                span.size Размер 1200х800
+                                .materials
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                .price__wrapper
+                                    span.old__price от 1234
+                                    span.new__price 1234 руб 
+                                button.btn.red В корзину
+                                button.btn.border__red Купить в 1 клик
+                            .tags
+                                span.hit Хит продаж
+                                span.popular Популярный
+                        .product__item
+                            img(src="assets/images/catalog/1.jpg", alt="")
+                            .desc
+                                span.name Мебель для персонала XTEN
+                                span.size Размер 1200х800
+                                .materials
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                    .item
+                                        img(src="assets/images/icons/materials/1.png", alt="")
+                                .price__wrapper
+                                    span.old__price от 1234
+                                    span.new__price 1234 руб 
+                                button.btn.red В корзину
+                                button.btn.border__red Купить в 1 клик
+                            .tags
+                                span.hit Хит продаж
+                                span.popular Популярный
+                    .owl-nav
+        +MorePluses()
+        +OurPartners()
+        section.ask_us
+            .container
+                +QuestionForm()
+        +Footer()
+        include pug/scripts.pug

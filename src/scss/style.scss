@@ -658,72 +658,72 @@ section.our__pluses
     grid-gap: 20px;
     justify-content: space-between;
     margin-bottom: 25px;
+}
 
-    .product__item
+.product__item
+{
+    position: relative;
+    img
     {
-        position: relative;
-        img
+        width: 100%;
+    }
+
+    .desc
+    {
+        padding: 25px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .name
         {
-            width: 100%;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .desc
+        .price__wrapper
         {
-            padding: 25px;
-            background: #fff;
             display: flex;
-            flex-direction: column;
             align-items: center;
-
-            .name
+            margin-bottom: 15px;
+            .old__price
             {
                 font-size: 14px;
+                text-decoration: line-through;
+                margin-right: 5px;
+            }
+
+            .new__price
+            {
+                font-size: 21px;
+                color: #d40406;
                 font-weight: 700;
-                margin-bottom: 10px;
             }
+        }
 
-            .price__wrapper
+        .btn
+        {
+            width: 70%;
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        .size
+        {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .materials
+        {
+            display: flex;
+            margin-bottom: 15px;
+
+            .item
             {
-                display: flex;
-                align-items: center;
-                margin-bottom: 15px;
-                .old__price
-                {
-                    font-size: 14px;
-                    text-decoration: line-through;
-                    margin-right: 5px;
-                }
-
-                .new__price
-                {
-                    font-size: 21px;
-                    color: #d40406;
-                    font-weight: 700;
-                }
-            }
-
-            .btn
-            {
-                width: 70%;
-                height: 40px;
-                margin-bottom: 15px;
-            }
-
-            .size
-            {
-                margin-bottom: 10px;
-                font-size: 14px;
-            }
-
-            .materials
-            {
-                display: flex;
-                margin-bottom: 15px;
-
-                .item
-                {
-                    margin: 2px;
-                }
+                margin: 2px;
             }
         }
     }
@@ -1406,6 +1406,7 @@ section.catalog__info
         border: none;
         padding-left: 0;
         margin: 25px 0;
+        text-transform: uppercase;
     }
 
     .product__info
@@ -1462,6 +1463,28 @@ section.catalog__info
             width: 57%;
             display: flex;
             flex-direction: column;
+
+            .price__list
+            {
+                font-size: 13px;
+                text-decoration: underline;
+                padding-left: 30px;
+                position: relative;
+                display: block;
+            }
+
+            .price__list:after
+            {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: url(../images/icons/pdf.png);
+                width: 20px;
+                height: 24px;
+            }
             
             
             .price__row
@@ -1523,27 +1546,7 @@ section.catalog__info
                     }
                 }
 
-                .price__list
-                {
-                    font-size: 13px;
-                    text-decoration: underline;
-                    padding-left: 30px;
-                    position: relative;
-                    display: block;
-                }
-
-                .price__list:after
-                {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    margin: auto;
-                    background: url(../images/icons/pdf.png);
-                    width: 20px;
-                    height: 24px;
-                }
+                
             }
 
             .materials
@@ -1836,6 +1839,104 @@ section.catalog__list
     .popular
     {
         background: #0dae45;
+    }
+}
+
+section.catalog__info.product__view
+{
+    .price__list
+    {
+        margin-left: auto;
+    }
+
+    .product__info .desc__col .price__row
+    {
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .price__wrapper
+    {
+        margin-right: 20px;
+    }
+
+    .buy__wrapper
+    {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+
+        .btn
+        {
+            margin-bottom: 10px;
+            height: 40px;
+            width: 200px;
+            font-size: 12px;
+        }
+
+        .add__cart span
+        {
+            padding-left: 25px;
+            position: relative;
+            display: block;
+        }
+
+        .add__cart span:after
+        {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 17px;
+            height: 16px;
+            background: url(../images/icons/add_to_cart.png);
+        }
+    }
+}
+
+section.catalog__slider
+{
+    .owl-item
+    {
+        padding: 5px;
+    }
+
+    .slider__wrapper
+    {
+        position: relative;
+
+        .owl-nav
+        {
+            width: 110%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            .owl-next
+            {
+                width: 31px;
+                height: 31px;
+                background: url(../images/icons/arrow_right.png);
+                border: none;
+                font-size: 0;
+            }
+
+            .owl-prev
+            {
+                width: 31px;
+                height: 31px;
+                background: url(../images/icons/arrow_left.png);
+                border: none;
+                font-size: 0;
+            }
+        }
     }
 }
 
