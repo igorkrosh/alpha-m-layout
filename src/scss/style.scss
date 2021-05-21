@@ -20,7 +20,7 @@ a
 {
     color: inherit;
     text-decoration: none;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 button, input, select
@@ -66,7 +66,7 @@ button, a
         opacity: 0;
         pointer-events: none;
         transition: 0.3s;
-        z-index: 10;
+        z-index: 20;
 
         span
         {
@@ -366,7 +366,7 @@ section.banner__slider
         }
     }
 
-    .container:nth-child(2)
+    .menu__container
     {
         background: #2a333e;
         color: #fff;
@@ -443,43 +443,50 @@ section.banner__slider
             }
         }
 
-        .search__form
+        
+    }
+
+    .modile__only
+    {
+        display: none;
+    }
+}
+
+.search__form
+{
+    display: flex;
+    align-items: center;
+    padding-right: 15px;
+    .search__input
+    {
+        height: 35px;
+        width: 200px;
+        position: relative;
+
+        input
         {
-            display: flex;
-            align-items: center;
-            padding-right: 15px;
-            .search__input
-            {
-                height: 35px;
-                width: 200px;
-                position: relative;
+            width: 100%;
+            height: 100%;
+            font-family: "OpenSans";
+            font-size: 13px;
+            padding: 5px;
+        }
 
-                input
-                {
-                    width: 100%;
-                    height: 100%;
-                    font-family: "OpenSans";
-                    font-size: 13px;
-                    padding: 5px;
-                }
-
-                button
-                {
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    height: 100%;
-                    width: 35px;
-                    background: url(../images/icons/loupe.png);
-                    background-size: auto;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    border: none;
-                }
-            }
-            
+        button
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 35px;
+            background: url(../images/icons/loupe.png);
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: none;
         }
     }
+    
 }
 
 .contacts__wrapper
@@ -529,6 +536,16 @@ section.banner__slider
         bottom: 0;
         margin: auto;
     }
+}
+
+.btn__mobile__menu
+{
+    display: none;
+}
+
+.mobile__menu__wrapper
+{
+    display: none;
 }
 
 .title

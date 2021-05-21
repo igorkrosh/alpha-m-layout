@@ -35,9 +35,48 @@ mixin Infobar()
                         span Пн-Пт 9:00-18:00
                     button.btn.red Задать вопрос
 
+mixin Menu()
+    .menu
+        .catalog__wrapper 
+            .catalog__title
+                a(href="/catalog.html") Каталог мебели
+            .catalog
+                a(href="") Мебель для персонала
+                a(href="") Кабинеты руководителя
+                a(href="") Офисные кресла
+                a(href="") Офисные диваны
+                a(href="") Модульная мягкая мебель  
+                a(href="") Стойки ресепшн
+                a(href="") Столы переговоров
+                a(href="") Офисные перегородки
+                a(href="") Многоместные секции
+                a(href="") Металлическая мебель
+                a(href="") Сейфы
+                a(href="") Гостиничная мебель
+                a(href="") Кухни для офиса
+                a(href="") Аксессуары для офиса
+                a(href="") Мебель для кафе и ресторанов
+                a(href="") Мебель для школ и детских садов
+                a(href="") Геймерские столы
+                a(href="") Офисная мебель для дома          
+        a(href="") О компании
+        a(href="") Наши проекты 
+        a(href="") Дизайнерам
+        a(href="") Новости
+        a(href="") Отзывы
+        a(href="") Контакты
+
 mixin Navbar()
     .navbar
-        .container
+        //.container.mobile__row
+            .contacts__wrapper
+                .contact.phone
+                    a(href="tel:8 (495) 698-60-99") 8 (495) 698-60-99
+                    a(href="tel:8 (800) 505-01-97") 8 (800) 505-01-97
+                .contact.email
+                    a(href="mailto:zakaz@alfa-ms.ru") zakaz@alfa-ms.ru
+            button.btn.red Заказать звонок
+        .container.main__container
             a.logo
                 img(src="assets/images/logo.png", alt="")
             .wrapper
@@ -47,7 +86,10 @@ mixin Navbar()
                         a(href="tel:8 (800) 505-01-97") 8 (800) 505-01-97
                     .contact.email
                         a(href="mailto:zakaz@alfa-ms.ru") zakaz@alfa-ms.ru
-                button.btn.red Заказать звонок
+                    .mobile__only
+                        a(href="tel:8 (495) 698-60-99").phone
+                        a(href="mailto:zakaz@alfa-ms.ru").mail
+                button.btn.red.callback Заказать звонок
                 .cart
                     .icon
                         img(src="assets/images/icons/cart.png", alt="")
@@ -55,40 +97,23 @@ mixin Navbar()
                     .wrapper
                         span.total__cost 0 р.
                         a.goto__cart(href="") Оформить заказ 
-        .container
-            .menu
-                .catalog__wrapper 
-                    a(href="/catalog.html")  Каталог мебели
-                    .catalog
-                        a(href="") Мебель для персонала
-                        a(href="") Кабинеты руководителя
-                        a(href="") Офисные кресла
-                        a(href="") Офисные диваны
-                        a(href="") Модульная мягкая мебель  
-                        a(href="") Стойки ресепшн
-                        a(href="") Столы переговоров
-                        a(href="") Офисные перегородки
-                        a(href="") Многоместные секции
-                        a(href="") Металлическая мебель
-                        a(href="") Сейфы
-                        a(href="") Гостиничная мебель
-                        a(href="") Кухни для офиса
-                        a(href="") Аксессуары для офиса
-                        a(href="") Мебель для кафе и ресторанов
-                        a(href="") Мебель для школ и детских садов
-                        a(href="") Геймерские столы
-                        a(href="") Офисная мебель для дома          
-                a(href="") О компании
-                a(href="") Наши проекты 
-                a(href="") Дизайнерам
-                a(href="") Новости
-                a(href="") Отзывы
-                a(href="") Контакты
+                .btn__mobile__menu
+                    img(src="assets/images/icons/menu.png", alt="")
+        .container.menu__container
+            +Menu()
             .search__form
                 form(action="/" method="get")
                     .search__input
                         input(type="text" placeholder="Я хочу найти..." name="query" value="")
                         button 
+    .mobile__menu__wrapper
+        .search__form
+                form(action="/" method="get")
+                    .search__input
+                        input(type="text" placeholder="Я хочу найти..." name="query" value="")
+                        button 
+        +Menu()
+        .btn__menu__close
 
 mixin QuestionForm()
     form(action="").question__form
@@ -133,7 +158,7 @@ mixin Footer()
                     a(href="") Кухни для офиса
                     a(href="") Аксессуары для офиса
                     a(href="") Мебель для кафе и ресторанов
-            .col
+            .col.popular
                 span.footer__title Популярные модели
                 .catalog__menu
                     a(href="") Imago офисная мебель

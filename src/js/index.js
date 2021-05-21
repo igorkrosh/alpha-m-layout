@@ -9,6 +9,7 @@ function Core()
     SetTabSwitcher();
     SetModal();
     SetMoreRecomended();
+    SetMobile();
 }
 
 function SetTabSwitcher()
@@ -117,7 +118,22 @@ function InitOwl()
 
     $('section.our__partners .owl-carousel').owlCarousel({
         items: 4,
-        navContainer: $('section.our__partners .owl-nav')
+        dots: false,
+        navContainer: $('section.our__partners .owl-nav'),
+        responsive: {
+            1024: {
+                items: 4
+            },
+            768: {
+                items: 3
+            },
+            576: {
+                items: 2
+            },
+            0: {
+                items: 1
+            }
+        }
     })
 
     $('section.info__section .owl-carousel').owlCarousel({
@@ -246,4 +262,21 @@ function InitValidator()
 function SubmitForm()
 {
     console.log('valid');
+}
+
+function SetMobile()
+{
+    $('.mobile__menu__wrapper .catalog__title').on('click', function() {
+        !$('.mobile__menu__wrapper .catalog__wrapper').hasClass('active') ? $('.mobile__menu__wrapper .catalog__wrapper').addClass('active') : $('.mobile__menu__wrapper .catalog__wrapper').removeClass('active');
+    });
+
+    $('.btn__mobile__menu').on('click', function() {
+        $('.mobile__menu__wrapper').addClass('active');
+        $('body').addClass('lock');
+    })
+
+    $('.btn__menu__close').on('click', function () {
+        $('.mobile__menu__wrapper').removeClass('active');
+        $('body').removeClass('lock')
+    })
 }
