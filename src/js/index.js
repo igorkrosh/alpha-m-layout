@@ -216,7 +216,18 @@ function InitOwl()
     $('section.catalog__slider .owl-carousel').owlCarousel({
         items: 3,
         nav: true,
-        navContainer: $('section.catalog__slider .owl-nav')
+        navContainer: $('section.catalog__slider .owl-nav'),
+        responsive: {
+            1024: {
+                items: 3
+            },
+            768: {
+                items: 2
+            },
+            0: {
+                items: 1
+            }
+        }
     })
 }
 
